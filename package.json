@@ -1,6 +1,6 @@
 {
   "name": "@azizul7m/markdown-renderer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A small React Markdown renderer with built-in color scheme support, headings, links, lists, tables, and generated anchors.",
   "license": "MIT",
   "type": "module",
@@ -14,8 +14,15 @@
       "default": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md", "LICENSE", "styles.css"],
-  "sideEffects": ["./styles.css"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "styles.css"
+  ],
+  "sideEffects": [
+    "./styles.css"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json"
   },
