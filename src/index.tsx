@@ -1,4 +1,6 @@
 import React from "react";
+export { colorSchemes, getColorScheme, getAllColorSchemes, applyColorScheme, getCurrentColorScheme, generateColorSchemeCSSVariables } from "./colorSchemes";
+export type { ColorSchemeName, ColorScheme } from "./colorSchemes";
 
 export function slugifyHeading(value: string) {
   return value

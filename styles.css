@@ -19,8 +19,16 @@
   .print-document h2,
   .print-document h3,
   .print-document h4 {
-    break-after: avoid;
+    break-after: avoid-page;
     page-break-after: avoid;
+  }
+
+  .print-document h1 + *,
+  .print-document h2 + *,
+  .print-document h3 + *,
+  .print-document h4 + * {
+    break-before: avoid-page;
+    page-break-before: avoid;
   }
 
   .print-document h2 {
