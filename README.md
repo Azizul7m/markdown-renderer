@@ -14,6 +14,7 @@ React is a peer dependency. The rendered markup uses Tailwind CSS utility classe
 
 ```tsx
 import MarkdownRenderer from "@bottoli/markdown-renderer";
+import "@bottoli/markdown-renderer/styles.css";
 
 export function Document({ markdown }: { markdown: string }) {
   return <MarkdownRenderer md={markdown} />;
@@ -27,6 +28,16 @@ Set `hideTableOfContents` to remove a Bangla `## সুচিপত্র` block
 ```
 
 `slugifyHeading` is also exported for building matching navigation links.
+
+## A4 printing
+
+Import the optional print stylesheet to format the rendered document for A4 paper:
+
+```tsx
+import "@bottoli/markdown-renderer/styles.css";
+```
+
+The print layout removes screen-only cards and shadows, uses A4 margins, keeps headings with their following content, avoids splitting paragraphs, list items, and table rows, and starts major `##` sections on a fresh page. Use the browser’s print dialog to save or print the document.
 
 ## Dynamic Table of Contents
 

@@ -1,0 +1,48 @@
+@page {
+  size: A4;
+  margin: 18mm 16mm;
+}
+
+@media print {
+  .print-document {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: white;
+    color: #282c34;
+    box-shadow: none;
+  }
+
+  .print-document h1,
+  .print-document h2,
+  .print-document h3,
+  .print-document h4 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .print-document h2 {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .print-document h2:first-of-type {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  .print-document p,
+  .print-document li,
+  .print-document tr,
+  .print-document table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-document hr {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+}

@@ -45,7 +45,7 @@ export type TableOfContentsProps = {
 export function TableOfContents({ title = "Table of contents", md = "", items, levels = [2] }: TableOfContentsProps) {
   const navigationItems = items ?? extractHeadings(md, levels);
 
-  return React.createElement("details", { className: "group relative" },
+  return React.createElement("details", { className: "print:hidden group relative" },
     React.createElement("summary", { className: "flex cursor-pointer list-none items-center justify-between rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm font-bold text-[var(--text)] shadow-[0_8px_24px_var(--shadow)] [&::-webkit-details-marker]:hidden" },
       title,
       React.createElement("span", { "aria-hidden": true, className: "transition-transform group-open:rotate-180" }, "⌄")
@@ -121,5 +121,5 @@ export default function MarkdownRenderer({ md, hideTableOfContents = false }: Ma
     elements.push(React.createElement("p", { key: i, className: "my-3 text-justify leading-relaxed text-[var(--text)] max-sm:text-left" }, renderInline(line)));
   }
   flushList();
-  return React.createElement("article", { className: "rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-[clamp(1rem,4vw,3rem)] shadow-[0_12px_35px_var(--shadow)] [&_a]:font-semibold [&_a]:text-[var(--accent1)]" }, elements);
+  return React.createElement("article", { className: "print-document rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-[clamp(1rem,4vw,3rem)] shadow-[0_12px_35px_var(--shadow)] [&_a]:font-semibold [&_a]:text-[var(--accent1)]" }, elements);
 }
